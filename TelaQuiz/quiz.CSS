@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  background: linear-gradient(90deg, rgba(91,30,159,1) 0%, rgba(77,39,182,1) 100%);
+}
+
+body h2 {
+  color: white;
+  font-size: 2em; /* Aumentado o tamanho da fonte do título */
+}
+
+main {
+  background-color: rgb(255, 255, 255);
+  padding: 40px; /* Aumentado o preenchimento */
+  border-radius: 10px;
+  width: 100%;
+  max-width: 800px; /* Aumentado */
+  min-height: 500px; /* Aumentado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px; /* Aumentado o espaço entre os elementos */
+}
+
+.spnQtd {
+  text-align: end;
+  font-size: 1.5em; /* Aumentado o tamanho da fonte */
+}
+
+.question {
+  font-size: 1.5em; /* Aumentado o tamanho da fonte da pergunta */
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Aumentado o espaço entre as respostas */
+}
+
+button {
+  width: 100%;
+  text-align: start;
+  padding: 10px; /* Aumentado o padding */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #008CCC;
+  color: white;
+  font-size: 1.2em; /* Aumentado o tamanho da fonte do botão */
+}
+
+.finish {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.finish button {
+  text-align: center;
+  padding: 10px; /* Aumentado o padding do botão de finalizar */
+}
