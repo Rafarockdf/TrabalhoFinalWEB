@@ -4,6 +4,9 @@ body{
 /* Ajustes na navbar */
 .navbar {
     padding: 20px 0; /* Aumenta a altura do cabeçalho */
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(64,64,64,1) 100%); 
+    /* Sombra branca */
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
   }
   .navbar-nav {
     margin: 0 auto; /* Centraliza os itens do menu */
