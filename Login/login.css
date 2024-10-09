@@ -1,0 +1,82 @@
+body {
+    background-color: black; 
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Para empilhar o ícone e o formulário */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centraliza verticalmente */
+}
+
+.home-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: transparent; 
+    color: white; 
+    border: none; 
+    font-size: 24px; /* Tamanho do ícone */
+    cursor: pointer; 
+    text-decoration: none; 
+    transition: color 0.3s; /* Transição suave */
+}
+
+.home-link:hover {
+    color: #ccc; /* Cor ao passar o mouse */
+}
+
+.form-container {
+    background-color: black; 
+    padding: 40px 30px; /* Aumentando o padding superior e inferior */
+    border: 3px solid black; /* Borda preta */
+    border-radius: 10px; 
+    max-width: 400px; 
+    width: 100%;
+    box-shadow: 0 0 15px rgba(128, 128, 128, 0.5); /* Sombra cinza */
+}
+
+h2 {
+    text-align: center;
+    margin: 5px 0; /* Margem reduzida para o título "Entrar" */
+}
+
+.entrar-form {
+    margin-top: -20px; /* Subindo a seção "Entrar" */
+}
+
+.cadastrar-form {
+    margin-top: 30px; /* Aumentando o espaço acima da seção "Cadastrar-se" */
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%; /* Largura total */
+    padding: 10px; 
+    margin: 10px 0; 
+    border: 1px solid black; 
+    border-radius: 5px; 
+    background-color: #222; /* Fundo do input mais escuro */
+    color: white;
+    box-sizing: border-box; /* Inclui padding e borda no cálculo da largura */
+    box-shadow: 0 0 5px rgba(128, 128, 128, 0.5); /* Sombra nos campos */
+}
+
+.btn{
+    background-color: white; 
+    color: black; 
+    border: none; 
+    padding: 10px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    width: 100%; /* Largura total */
+    margin-top: 10px; /* Espaço acima do botão */
+    box-shadow: 0 0 5px rgba(128, 128, 128, 0.5); /* Sombra no botão */
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s; /* Transição suave */
+}
+
+.btn:active{
+    transform: scale(0.95); /* Reduz o tamanho do botão quando pressionado */
+    box-shadow: 0 0 2px rgba(128, 128, 128, 0.5); /* Reduz a sombra */
+}
