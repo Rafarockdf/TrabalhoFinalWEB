@@ -6,6 +6,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(64,64,64,1) 100%);
 }
 .slider{
     margin: 0 auto;
