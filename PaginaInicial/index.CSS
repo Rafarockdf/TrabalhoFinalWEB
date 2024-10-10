@@ -18,7 +18,7 @@ body{
 
 /* Ajuste do tamanho da logo dentro da navbar */
 .navbar-brand img {
-    max-height: 80px; /* Altura máxima da logo */
+    max-height: 50px; /* Altura máxima da logo */
     width: auto;      /* Mantém a proporção da largura */
 }
 
@@ -41,5 +41,5 @@ body{
 }
 
 .navbar-brand{
-    margin-left: 10px;
+    margin-left: 0;
 }
