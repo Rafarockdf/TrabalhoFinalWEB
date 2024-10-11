@@ -7,8 +7,6 @@
     <link rel="icon" href="../../logos/Y2K.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="escolha_quiz.CSS" rel="stylesheet">
-    
-    
 </head>
 <body>
   <!-- Navbar -->
@@ -35,29 +33,28 @@
         <div class="d-flex">
           <a href="../../Login/login.html">
             <button class="btn btn-outline-light me-2" type="button">Login</button>
-            </a>
+          </a>
           <a href="../../Cadastro/cadastro.HTML">
             <button class="btn btn-light" type="button">Cadastro</button>
           </a>
-            
         </div>
     </div>
 </nav>
 
 <main>
-  <button class="custom-button">Quiz Jogos</button>
-  <button class="custom-button">Quiz Acontecimentos</button>
-  <button class="custom-button">Quiz Músicas</button>
-
-    </div>
-    <div class="finish">
-      <span></span>
-      <button class="Reiniciar">Reiniciar</button>
-    </div>
-  </main>
+  <!-- Botões de seleção de quiz -->
   
-  <script src="quiz.js" type="module"></script>
+  <button class="custom-button" onclick="q1()">Quiz Jogos</button>
+  <button class="custom-button b2" onclick="q2()">Quiz Acontecimentos</button>
+  <button class="custom-button b2" onclick="q3()">Quiz Músicas</button>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <div class="finish">
+    <span></span>
+    <button class="Reiniciar">Reiniciar</button>
+  </div>
+</main>
+
+<script src="quiz.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
