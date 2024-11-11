@@ -1,0 +1,99 @@
+body {
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(64,64,64,1) 100%); 
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.navbar {
+    padding: 20px 0;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(64,64,64,1) 100%);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+}
+.navbar-brand img {
+    max-height: 50px; /* Altura máxima da logo */
+    width: auto;      /* Mantém a proporção da largura */
+}
+
+.navbar-brand {
+    margin-left: 0; /* Alinha a logo Y2K à margem esquerda */
+}
+.home-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: transparent; 
+    color: white; 
+    border: none; 
+    font-size: 24px; 
+    cursor: pointer; 
+    text-decoration: none; 
+    transition: color 0.3s;
+}
+
+.home-link:hover {
+    color: #ccc;
+}
+
+.form-container {
+    background-color: black;
+    padding: 40px 30px;
+    border: 3px solid black;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(128, 128, 128, 0.5);
+}
+
+h2 {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.cadastrar-form {
+    margin-top: -20px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px rgba(128, 128, 128, 0.5);
+}
+
+.btn {
+    background-color: white; 
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 0 5px rgba(128, 128, 128, 0.5);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 2px rgba(128, 128, 128, 0.5);
+}
+.alert {
+    display: none;
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+    margin-top: 15px;
+    text-align: center;
+}

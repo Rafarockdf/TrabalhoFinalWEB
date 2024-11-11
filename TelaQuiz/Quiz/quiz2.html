@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="icon" href="../../logos/Y2K.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="quiz2.CSS" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="../../PaginaInicial/index.HTML"><img src="../../logos/Y2K.png" alt="Logo Y2K"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../../PaginaInicial/index.HTML">Início</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../../Sobre/sobre2.html">Sobre</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="../../TelaQuiz/Quiz/quiz2.html">Quiz</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contato</a>
+            </li>
+        </ul>
+        <div class="d-flex">
+          <!-- Botões de Login e Cadastro, inicialmente visíveis -->
+          <a href="../../Login/login.html" id="loginButton">
+            <button class="btn btn-outline-light me-2" type="button">Login</button>
+          </a>
+          <a href="../../Cadastro/cadastro.HTML" id="registerButton">
+            <button class="btn btn-light" type="button">Cadastro</button>
+          </a>
+          
+          <!-- Botão de Usuário, inicialmente oculto -->
+          <div id="userButton" style="display: none;">
+                <button class="btn btn-light d-flex align-items-center">
+                    <i class="fas fa-user-circle" style="font-size: 1.5em; margin-right: 10px;"></i>
+                    <span id="username"></span>
+                </button>
+
+          </div>
+        </div>
+    </div>
+</nav>
+
+<main>
+  <button class="voltar" onclick="history.back()"><img src="botao_voltar_quiz.png" alt="Voltar"></button>
+    <!-- Botões de seleção de quiz -->
+    <div class="quiz-selection">
+      <button class="custom-button" data-quiz-type="jogos">Quiz Jogos</button>
+      <button class="custom-button b2" data-quiz-type="acontecimentos">Quiz Acontecimentos</button>
+      <button class="custom-button b2" data-quiz-type="musicas">Quiz Músicas</button>
+    </div>
+
+    <!-- Conteúdo do quiz -->
+    <div class="content" style="display: none;">
+      <span class="spnQtd"></span>
+      <span class="question"></span>
+      <div class="answers"></div>
+    </div>
+    
+    <!-- Finalização do quiz -->
+    <div class="finish" style="display: none;">
+      <span></span>
+      <button class="Reiniciar" onclick="saveResult()">Reiniciar</button>
+    </div>
+</main>
+  
+<script src="quiz.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    // Faz a chamada AJAX para verificar o status de login ao carregar a página
+    $.ajax({
+      type: 'GET',
+      url: '../../ScriptsPHP/check_login.php', // URL para verificar o status de login
+      dataType: 'json',
+      success: function(response) {
+        console.log('Resposta do check_login:', response);
+        if (response.status === 'logged_in') {
+            // Se o usuário estiver logado, esconda os botões de login/cadastro
+            $('#loginButton').hide();
+            $('#registerButton').hide();
+            
+            // Exibe o nome do usuário no botão
+            $('#username').text(response.username); // Mostra o nome do usuário
+            $('#userButton').show(); // Mostra o botão de usuário
+            
+            // Adiciona a opção de logout ao clicar no botão do usuário
+            $("#userButton").off('click').on('click', function() {
+                // Chamada AJAX para deslogar
+                $.ajax({
+                    type: 'POST',
+                    url: '../../ScriptsPHP/logout.php', // URL para o script de logout
+                    success: function() {
+                        // Ao deslogar com sucesso, recarrega a página para atualizar a interface
+                        window.location.reload();
+                    },
+                    error: function() {
+                        console.log('Erro ao tentar deslogar');
+                    }
+                });
+            });
+        } else {
+          // Se o usuário não estiver logado, mostra os botões de login/cadastro
+          $('#loginButton').show();
+          $('#registerButton').show();
+          $('#userButton').hide(); // Esconde o botão de usuário
+        }
+      },
+      error: function() {
+        console.log('Erro ao verificar o status de login');
+      }
+    });
+  });
+  
+  function reiniciarQuiz() {
+    // Dados que você deseja enviar ao `save_result.php`
+    const resultado = {
+        pontuacao: 10, // Substitua pelo valor real da pontuação
+        quiz_id: 1,    // Substitua pelo ID real do quiz
+        usuario_id: 123 // Substitua pelo ID real do usuário
+    };
+
+    // Chamada AJAX para salvar o resultado
+    $.ajax({
+        type: 'POST',
+        url: '../../ScriptsPHP/save_result.php',
+        data: resultado,
+        success: function(response) {
+            console.log('Resultado salvo com sucesso:', response);
+            alert("Resultados registrados com sucesso!");
+
+            // Reiniciar o quiz após salvar o resultado
+            $('.finish').hide();
+            $('.quiz-selection').show();
+            $('.content').hide();
+        },
+        error: function() {
+            console.log('Erro ao salvar o resultado');
+            alert("Houve um erro ao registrar os resultados.");
+        }
+    });
+}
+
+</script>
+
+</body>
+</html>

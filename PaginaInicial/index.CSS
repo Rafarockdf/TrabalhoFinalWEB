@@ -1,0 +1,92 @@
+body{
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(64,64,64,1) 100%);
+}
+/* Ajustes na navbar */
+.navbar {
+    padding: 20px 0; /* Aumenta a altura do cabeçalho */
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(64,64,64,1) 100%); 
+    /* Sombra branca */
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+  }
+  .navbar-nav {
+    margin: 0 auto; /* Centraliza os itens do menu */
+  }
+  .custom-col {
+    width: 300px; /* Define uma largura específica para a div */
+    height: 100px; /* Altura específica para manter o formato */
+  }
+
+/* Ajuste do tamanho da logo dentro da navbar */
+.navbar-brand img {
+    max-height: 50px; /* Altura máxima da logo */
+    width: auto;      /* Mantém a proporção da largura */
+}
+
+/* Centraliza os itens do menu */
+.navbar-nav {
+    margin: 0 auto;
+}
+
+/* Define uma largura específica para a div da logo Y2K na página */
+.custom-col {
+    width: 300px;
+    height: 155px;
+}
+
+/* Garante que a imagem preencha a div corretamente */
+.custom-col img {
+    width: 100%; /* A imagem ocupa 100% da largura da div */
+    height: 100%; /* A imagem ocupa 100% da altura da div */
+    object-fit: cover; /* Ajusta a imagem sem distorção */
+}
+
+.navbar-brand{
+    margin-left: 0;
+}
+
+/* Ajustes para o carrossel */
+.carousel-inner img {
+    width: 100%;  /* A imagem ocupará 100% da largura do contêiner */
+    height: auto; /* Mantém a proporção da altura */
+}
+
+/* Para ajustar o tamanho máximo do carrossel */
+.carousel-container {
+    max-width: 700px; 
+    padding-top: auto;     
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black !important;
+    filter: invert(1);
+}
+/* Remover o sublinhado de links */
+a.nav-link {
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+/* Ajustes no botão para o ícone de usuário */
+#userIcon i {
+    font-size: 2em;
+    color: white;
+}
+
+/* Ajustes no botão de login/cadastro para que não fiquem com bordas ou destaque de link */
+#loginButton button, #registerButton button {
+    text-decoration: none; /* Remove sublinhado de links dentro de botões */
+    border: none; /* Remove bordas padrão do botão */
+}
+
+/* Ajustes no botão de usuário */
+#userButton {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+#userButton i {
+    margin-right: 10px;
+}
