@@ -66,6 +66,31 @@ input[type="email"], input[type="password"] {
     width: auto;      /* Mantém a proporção da largura */
 }
 
+
+
 .navbar-brand {
     margin-left: 0; /* Alinha a logo Y2K à margem esquerda */
+}
+
+/* Estilos para o alerta flutuante */
+.alert-floating {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: none;
+    max-width: 90%;
+    width: 300px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.alert-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+    color: white;
 }

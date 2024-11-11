@@ -43,3 +43,52 @@ body{
 .navbar-brand{
     margin-left: 0;
 }
+
+/* Ajustes para o carrossel */
+.carousel-inner img {
+    width: 100%;  /* A imagem ocupará 100% da largura do contêiner */
+    height: auto; /* Mantém a proporção da altura */
+}
+
+/* Para ajustar o tamanho máximo do carrossel */
+.carousel-container {
+    max-width: 700px; 
+    padding-top: auto;     
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black !important;
+    filter: invert(1);
+}
+/* Remover o sublinhado de links */
+a.nav-link {
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+/* Ajustes no botão para o ícone de usuário */
+#userIcon i {
+    font-size: 2em;
+    color: white;
+}
+
+
+
+/* Ajustes no botão de login/cadastro para que não fiquem com bordas ou destaque de link */
+#loginButton button, #registerButton button {
+    text-decoration: none; /* Remove sublinhado de links dentro de botões */
+    border: none; /* Remove bordas padrão do botão */
+}
+
+/* Ajustes no botão de usuário */
+#userButton {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+#userButton i {
+    margin-right: 10px;
+}
